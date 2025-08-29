@@ -19,6 +19,13 @@ outputs:
   dashnormalized:
     description: The input string, with any non alphanumeric characters replaced with dashes, which is then lowercased.
     value: ${{ steps.run-script.outputs.dashnormalized }}
+  afterlastdash:
+    description: The input string, with only the part after the last slash ("/").
+    value: ${{ steps.run-script.outputs.afterlastdash }}
+  lowerlastdash:
+    description: The input string, with only the part after the last slash ("/"), lowercased.
+    value: ${{ steps.run-script.outputs.lowerlastdash }}
+
 runs:
   using: "composite"
   steps:
