@@ -1,5 +1,5 @@
 name: "Action String Formatter"
-description: "Github Action to make a string lowercase, uppercase, or capitalized; done purely in python3 without any dependency"
+description: "Github Action to convert strings using pure python3"
 author: <Entepotenz> + <IJop148>
 
 inputs:
