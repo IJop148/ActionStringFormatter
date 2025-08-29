@@ -3,24 +3,6 @@ Github Action: Make a string lowercase, uppercase, or capitalized
 
 this runs in pure python without any additional packages or dependencies!
 
- ## features:
- - support for UTF-8 strings
- - minimal dependencies (small footprint)
- - this action has tests to guarantee a smooth experience for you
-
-## What do you mean by "minimal dependencies"
-- using only simple standard python3
-- here a list of typical advantages for this approach:
-    - no dependency on a specific execution environment
-        - no need to update the action
-    - less code -> less bugs -> less security issues
-        - total number of code lines: 14
-
-## inspiration for this project:
-from this project: https://github.com/ASzc/change-string-case-action
-
-# usage
-
 # Change String Case GitHub Action
 
 This action accepts any string, and outputs three different versions of that string:
@@ -75,6 +57,19 @@ dashnormalized=''.join(x if x.isalnum() else '-' for x in lowercase)
 
 Example: `Xy.ZzY` -> `xy-zzy`
 
+### `afterlastdash`
+
+```python
+afterlastdash="${{ inputs.string }}".split("/")[-1]
+```
+
+### `lowerlastdash`
+
+```python
+lowerlastdash="${{ inputs.string }}".split("/")[-1].lower()
+```
+
+
 ## Example Usage
 
 ```yaml
@@ -96,4 +91,8 @@ jobs:
         run: echo ${{ steps.string.outputs.capitalized }}
       - id: step5
         run: echo ${{ steps.string.outputs.dashnormalized }}
+      - id: step6
+        run: echo ${{ steps.string.outputs.afterlastdash }}
+      - id: step7
+        run: echo ${{ steps.string.outputs.lowerlastdash }}
 ```
