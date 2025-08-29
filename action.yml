@@ -1,6 +1,6 @@
-name: "Change String Case minimal dependencies"
+name: "Action String Formatter"
 description: "Github Action to make a string lowercase, uppercase, or capitalized; done purely in python3 without any dependency"
-author: <Entepotenz>
+author: <Entepotenz> + <IJop148>
 
 inputs:
   string:
@@ -40,4 +40,4 @@ runs:
 
 branding:
   icon: paperclip
-  color: blue
+  color: purple
